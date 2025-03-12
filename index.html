@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>URL Shortener</title>
+    <link rel="stylesheet" href="styles_new.css">
+    <link rel="stylesheet" href="mobile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="theme-switch-wrapper">
+        <label class="theme-switch">
+            <input type="checkbox" id="themeToggle">
+            <div class="slider round"></div>
+        </label>
+        <i class="fas fa-moon"></i>
+    </div>
+
+    <div class="container">
+        <div class="logo-container">
+            <div class="url-logo">
+                <span class="protocol">https://</span>
+                <span class="domain">short</span>
+                <span class="tld">.ly</span>
+                <div class="cursor-blink"></div>
+            </div>
+        </div>
+        <h1>URL Shortener</h1>
+        <div class="input-group">
+            <input type="url" id="urlInput" placeholder="Enter your URL here" required>
+            <button id="shortenBtn">
+                <span>Shorten</span>
+                <div class="loader"></div>
+            </button>
+        </div>
+        <div id="error" class="error"></div>
+        
+        <div id="resultContainer" class="result-container hidden">
+            <div class="shortened-url-wrapper">
+                <input type="text" id="shortenedUrl" readonly>
+                <button id="copyBtn" class="copy-btn">
+                    <i class="fas fa-copy"></i>
+                    Copy
+                </button>
+            </div>
+        </div>
+
+        <div id="historyContainer" class="history-container">
+            <h2>Previous Links</h2>
+            <div id="linksList"></div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast"></div>
+    <script src="app.js"></script>
+</body>
+</html>
